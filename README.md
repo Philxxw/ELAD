@@ -7,7 +7,7 @@ We proposes  a  model  to  segment  the  original  data  and  generate time  sub
 
 ## Directory
 
-- [File Directory](#File Directory)
+- [File Directory](#FileDirectory)
 - [Framework](#Framework)
 - [Author](#Author)
 
@@ -20,7 +20,7 @@ We proposes  a  model  to  segment  the  original  data  and  generate time  sub
 git clone https://github.com/Phil-Shawn/Robust-Anomaly-Detection-via-Extra-Long-Attention-Mechanism-for-Multivariate-Time-Series.git
 ```
 
-### File Directory
+### FileDirectory
 ```
 Anomaly Detection
 ├── README.md
