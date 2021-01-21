@@ -68,24 +68,17 @@ for filename in filename_list:
     data_gen = pd.read_csv(os.path.join(reconstruction_dir,data_gen_name),encoding = 'gb18030',header = None)
     data_g_dict = generation_time_dict(data_gen)
     #print(data_g_dict.shape)
-    
-    #SMAP MSL
+  
     data_ini_token = np.array(pd.read_csv(os.path.join(data_dir,filename+'_test_tocken_input.csv'),encoding = 'gb18030',header = None))
     data_ini_dict = np.array(pd.read_csv(os.path.join(data_dir,data_ini_name),encoding = 'gb18030',header = None))
-    #SMD
-    #data_ini_token = np.array(pd.read_csv(os.path.join(data_dir+'test_tocken/',filename+'_test_tocken_input.csv'),encoding = 'gb18030',header = None))
-    #data_ini_dict = np.array(pd.read_csv(os.path.join(data_dir+'test_eb_dict/',data_ini_name),encoding = 'gb18030',header = None))
     data_ini = data_ini_dict[data_ini_token]
     data_ini = data_ini[:,kpi_number*4:kpi_number*5]
     data_ini_t_dict = generation_time_dict(data_ini)
     #print(data_ini_t_dict.shape)
     MSE = MSE_list(data_g_dict,data_ini_t_dict)
     
-    #SMAP MSL
+
     label = np.array(pd.read_csv(os.path.join(data_dir,filename+'_test_label.csv'),encoding = 'gb18030',header = None))
-    #SMD
-    #label = np.array(pd.read_csv(os.path.join(data_dir+'test_label/',filename+'_test_label.csv'),encoding = 'gb18030',header = None))
-    
     label = list(label.reshape(-1))
     label = label[32*4:MSE.shape[1]+32*4]
     print('start to detect %s...'%(filename))
