@@ -5,7 +5,7 @@
 We proposes  a  model  to  segment  the  original  data  and  generate time  subsequences. And we use  the  random  concatenation  within  a certain time range to learn more complex data distributions. Then we  designed  a  mask  method  of  random  continuous  segments  or random  discrete  points  in  partial  position  range  of  data  and  a corresponding objective function for this method. These methods are  applied  to  the  dual-stream  self-attention  model  to  learn  a good  distribution  of  training  data.  Anomaly  detection  depend on  construction  error  between  the  reconstructed  data  output  by the model and the original test data. The evaluation experiments are conducted on two public datasets from aerospace and a public server  machine  dataset  from  an  Internet  company.  Our  model has a total F1 score of 0.9526 in the three real datasets, which is significantly  better  than  the  best  performing  baseline.
 
 
-## 目录
+## Directory
 
 - [File Directory](#File Directory)
 - [Framework](#Framework)
