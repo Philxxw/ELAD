@@ -17,7 +17,7 @@ We proposes  a  model  to  segment  the  original  data  and  generate time  sub
 2. Clone the repo
 
 ```sh
-git clone https://github.com/Phil-Shawn/Robust-Anomaly-Detection-via-Extra-Long-Attention-Mechanism-for-Multivariate-Time-Series.git
+git clone https://github.com/Phil-Shawn/ELAD.git
 ```
 
 ### FileDirectory
