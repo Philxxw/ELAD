@@ -78,32 +78,32 @@ class Model(nn.Module):
         self.DropAttn = nn.Dropout(p=dropatt)
 
         self.r_w_bias = nn.Parameter(torch.randn(self.n_layer,
-                                                  self.n_head,self.d_head)).cuda()#u(相对位置编码)
+                                                  self.n_head,self.d_head))#u(相对位置编码)
         self.r_r_bias = nn.Parameter(torch.randn(self.n_layer,
-                                                  self.n_head, self.d_head)).cuda()#v(相对位置编码)
+                                                  self.n_head, self.d_head))#v(相对位置编码)
 
         ##### Segment embedding
         self.r_s_bias = nn.Parameter(torch.randn(self.n_layer,
-                                                  self.n_head,self.d_head)).cuda()
+                                                  self.n_head,self.d_head))
 
         self.seg_embed = nn.Parameter(torch.randn(self.n_layer, 2,
-                                                   self.n_head, self.d_head)).cuda()
+                                                   self.n_head, self.d_head))
 
         self.mask_emb = nn.Parameter(torch.randn(1, 1, d_model)).cuda()
 
         # post-attention projection (back to `d_model`)
         self.proj_o = nn.Parameter(torch.randn(self.d_model,
-                                                self.n_head, self.d_head)).cuda()
+                                                self.n_head, self.d_head))
 
         #### Project hidden states to a specific head with a 4D-shape.
         self.q_proj_weight = nn.Parameter(torch.randn(self.d_model,
-                                                       self.n_head, self.d_head)).cuda()
+                                                       self.n_head, self.d_head))
         self.k_proj_weight = nn.Parameter(torch.randn(self.d_model,
-                                                       self.n_head, self.d_head)).cuda()
+                                                       self.n_head, self.d_head))
         self.v_proj_weight = nn.Parameter(torch.randn(self.d_model,
-                                                       self.n_head, self.d_head)).cuda()
+                                                       self.n_head, self.d_head))
         self.r_proj_weight = nn.Parameter(torch.randn(self.d_model,
-                                                       self.n_head, self.d_head)).cuda()
+                                                       self.n_head, self.d_head))
 
         self.layer_norm = nn.LayerNorm(d_model)
 
@@ -111,7 +111,7 @@ class Model(nn.Module):
         self.conv2 = nn.Linear(d_inner, d_model)
         self.relu = nn.ReLU(inplace=True)
 
-        self.softmax_b = nn.Parameter(torch.zeros(embedding_dict.shape[0]))
+        #self.softmax_b = nn.Parameter(torch.zeros(embedding_dict.shape[0]))
 
 
     def gelu(self, x):
